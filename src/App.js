@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+// import RecipeAdminForm from './Adimin';
+import Navbars from './Navbar';
+import SignUp from'./SignUp';
+// import Home from './Homepage';
+// import ImageUploader from './ImageUploder';
+import UserForm from './UserForm';
+import Login from './Login'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      
+  
+     <BrowserRouter>
+      <Routes>
+         {/* <Route path="/" element={<Home/>} /> */}
+        <Route path="/" element={<Navbars/>} />
+        <Route path="/userform" element={<UserForm/>} />
+        {/* <Route path="/Post" element={<RecipeAdminForm/>} /> */}
+        <Route path="/SignUp" element={<SignUp/>} />
+        <Route path="/Login" element={<Login/>} />
+
+      </Routes>
+     </BrowserRouter>
+       
     </div>
   );
 }
